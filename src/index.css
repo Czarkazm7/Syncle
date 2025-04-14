@@ -27,3 +27,37 @@ h1, h2, h3, h4, h5, h6 {
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
+
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #2e0066;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-dropdown li {
+  padding: 0.5rem 1rem;
+}
+
+.nav-dropdown li a {
+  color: white;
+  font-family: 'DM Sans', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.nav-dropdown li a:hover {
+  background-color: #4a0099;
+}
+
+.nav-dropdown.open {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -14,9 +14,14 @@ import TheArchitect from './TheArchitect';
 
 const App = () => {
   const [darkMode, setDarkMode] = React.useState(false);
+  const [dropdownOpen, setDropdownOpen] = React.useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
   };
 
   return (
@@ -29,8 +34,8 @@ const App = () => {
         </div>
         <nav className="p-4 flex justify-between items-center relative z-10 max-w-6xl mx-auto sticky top-0 bg-indigo-950/80 backdrop-blur-md">
           <div className="flex items-center space-x-4">
-            <img src="/images/logo.png" alt="Sync & Flow Logo" className="w-12 h-12" />
-            <span className="text-lg font-semibold uppercase">Sync & Flow</span>
+            <img src="/images/logo.png" alt="Syncle Logo" className="w-12 h-12" />
+            <span className="text-lg font-semibold uppercase">Syncle</span>
           </div>
           <ul className="flex space-x-6">
             <li>
@@ -48,17 +53,26 @@ const App = () => {
             <li>
               <Link to="/quiz" className="text-white font-medium hover:underline transition-colors duration-300">Quiz</Link>
             </li>
-            <li>
-              <Link to="/phoenix" className="text-white font-medium hover:underline transition-colors duration-300">Phoenix</Link>
-            </li>
-            <li>
-              <Link to="/oracle" className="text-white font-medium hover:underline transition-colors duration-300">Oracle</Link>
-            </li>
-            <li>
-              <Link to="/muse" className="text-white font-medium hover:underline transition-colors duration-300">The Muse</Link>
-            </li>
-            <li>
-              <Link to="/architect" className="text-white font-medium hover:underline transition-colors duration-300">The Architect</Link>
+            <li className="relative">
+              <button onClick={toggleDropdown} className="text-white font-medium hover:underline transition-colors duration-300 flex items-center">
+                Archetypes ▾
+              </button>
+              {dropdownOpen && (
+                <ul className="absolute left-0 mt-2 bg-violet-900 rounded-lg shadow-lg p-2 w-48">
+                  <li>
+                    <Link to="/phoenix" className="block px-4 py-2 text-white hover:bg-violet-700 rounded">Phoenix</Link>
+                  </li>
+                  <li>
+                    <Link to="/oracle" className="block px-4 py-2 text-white hover:bg-violet-700 rounded">Oracle</Link>
+                  </li>
+                  <li>
+                    <Link to="/muse" className="block px-4 py-2 text-white hover:bg-violet-700 rounded">Muse</Link>
+                  </li>
+                  <li>
+                    <Link to="/architect" className="block px-4 py-2 text-white hover:bg-violet-700 rounded">Architect</Link>
+                  </li>
+                </ul>
+              )}
             </li>
           </ul>
           <div className="flex items-center">
@@ -156,7 +170,7 @@ const Home = () => {
         <h2 className="text-4xl font-serif font-semibold text-white text-center mb-12">Results That Speak</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-xl">
-            <p className="text-zinc-300">“Sync & Flow has completely transformed my relationship with my cycle.”</p>
+            <p className="text-zinc-300">“Syncle has completely transformed my relationship with my cycle.”</p>
             <p className="text-zinc-300 mt-4">— Jane D.</p>
           </div>
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-xl">
