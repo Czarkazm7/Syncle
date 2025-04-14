@@ -41,16 +41,16 @@ const Journal = () => {
         <h2 className="text-2xl font-bold mb-4">Cycle Journal</h2>
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <div>
-            <label className="block mb-2">Date</label>
+            <label className="block mb-2 text-white">Date</label>
             <input
               type="date"
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="p-2 border rounded"
+              className="p-2 border rounded bg-transparent text-white placeholder:text-lavender focus:outline-none focus:ring-2 focus:ring-white"
             />
           </div>
           <div>
-            <label className="block mb-2">Mood</label>
+            <label className="block mb-2 text-white">Mood</label>
             <div className="flex space-x-4">
               {['😊', '😐', '😞', '😢', '😭'].map((emoji) => (
                 <button
@@ -65,25 +65,25 @@ const Journal = () => {
             </div>
           </div>
           <div>
-            <label className="block mb-2">Energy Level</label>
+            <label className="block mb-2 text-white">Energy Level</label>
             <input
               type="range"
               min="1"
               max="5"
               value={energy}
               onChange={(e) => setEnergy(e.target.value)}
-              className="w-full"
+              className="w-full bg-transparent text-white"
             />
-            <div className="flex justify-between text-sm">
+            <div className="flex justify-between text-sm text-white">
               <span>Low Tide</span>
               <span>Full Bloom</span>
             </div>
           </div>
           <div>
-            <label className="block mb-2">Symptoms</label>
+            <label className="block mb-2 text-white">Symptoms</label>
             <div className="flex space-x-4">
               {['Bloating', 'Cramps', 'Headache', 'Fatigue'].map((symptom) => (
-                <label key={symptom} className="flex items-center">
+                <label key={symptom} className="flex items-center text-white">
                   <input
                     type="checkbox"
                     checked={symptoms.includes(symptom)}
@@ -102,19 +102,19 @@ const Journal = () => {
             </div>
           </div>
           <div>
-            <label className="block mb-2">What’s coming up for you today?</label>
+            <label className="block mb-2 text-white">What’s coming up for you today?</label>
             <textarea
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              className="p-2 border rounded w-full"
+              className="p-2 border rounded bg-transparent text-white placeholder:text-lavender focus:outline-none focus:ring-2 focus:ring-white"
             />
           </div>
           <div>
-            <label className="block mb-2">One sweet thing today</label>
+            <label className="block mb-2 text-white">One sweet thing today</label>
             <textarea
               value={gratitude}
               onChange={(e) => setGratitude(e.target.value)}
-              className="p-2 border rounded w-full"
+              className="p-2 border rounded bg-transparent text-white placeholder:text-lavender focus:outline-none focus:ring-2 focus:ring-white"
             />
           </div>
           <button

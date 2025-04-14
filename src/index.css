@@ -61,3 +61,44 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
   transform: translateY(0);
 }
+
+.bg-gradient-light {
+  background: linear-gradient(to bottom, #e6ccff, #fbe4ff);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(to bottom, #2e0066, #1a0033);
+}
+
+.dark-theme {
+  background: linear-gradient(to bottom, #2e0066, #1a0033);
+  color: white;
+}
+
+.light-theme {
+  background: linear-gradient(to bottom, #e6ccff, #fbe4ff);
+  color: black;
+}
+
+input, textarea {
+  color: white;
+  background-color: transparent;
+  border: 1px solid #4b0082;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: white;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+input::placeholder, textarea::placeholder {
+  color: #cbb0e5;
+}
+
+label {
+  color: #f0f0f0;
+}

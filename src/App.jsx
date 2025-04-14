@@ -11,14 +11,10 @@ import Phoenix from './Phoenix';
 import Oracle from './Oracle';
 import TheMuse from './TheMuse';
 import TheArchitect from './TheArchitect';
+import ThemeToggle from './ThemeToggle';
 
 const App = () => {
-  const [darkMode, setDarkMode] = React.useState(false);
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -26,7 +22,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className={`min-h-screen bg-gradient-to-b ${darkMode ? 'from-gray-900 to-gray-800' : 'from-indigo-950 to-purple-900'} text-white relative`}>
+      <div className="min-h-screen bg-gradient-to-b from-indigo-950 to-purple-900 text-white relative transition-colors duration-500">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-indigo-950 to-purple-900 opacity-50"></div>
           <div className="absolute inset-0 bg-[url('/path/to/your/svg-blob.svg')] bg-no-repeat bg-cover opacity-30 blur-2xl"></div>
@@ -76,9 +72,7 @@ const App = () => {
             </li>
           </ul>
           <div className="flex items-center">
-            <button onClick={toggleDarkMode} className="text-white dark:text-gray-800">
-              {darkMode ? '☀️' : '🌙'}
-            </button>
+            <ThemeToggle />
           </div>
         </nav>
         <FloatingAvatar />
@@ -121,9 +115,11 @@ const Home = () => {
       <animated.div style={fade} className="text-center space-y-12 relative z-10 max-w-6xl mx-auto">
         <h1 className="text-6xl font-serif font-semibold text-white">Reclaim Your Rhythm. Redefine Your Power.</h1>
         <p className="text-lg text-zinc-300">A science-backed cycle syncing system for modern women who want to feel powerful all month long.</p>
-        <animated.button style={pulse} className="bg-gradient-to-r from-rose-400 to-fuchsia-500 text-white px-8 py-4 rounded-full shadow-lg hover:scale-105 hover:brightness-110 transition-all duration-300 ease-in-out">
-          Take the Cycle Quiz →
-        </animated.button>
+        <Link to="/quiz">
+          <animated.button style={pulse} className="bg-gradient-to-r from-rose-400 to-fuchsia-500 text-white px-8 py-4 rounded-full shadow-lg hover:scale-105 hover:brightness-110 transition-all duration-300 ease-in-out">
+            Take the Cycle Quiz →
+          </animated.button>
+        </Link>
       </animated.div>
 
       <div className="py-20 max-w-6xl mx-auto">
@@ -193,9 +189,11 @@ const Home = () => {
 
       <div className="py-20 max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-serif font-semibold text-white mb-8">Start Your Sync Journey</h2>
-        <animated.button style={pulse} className="bg-gradient-to-r from-rose-400 to-fuchsia-500 text-white px-8 py-4 rounded-full shadow-lg hover:scale-105 hover:brightness-110 transition-all duration-300 ease-in-out">
-          Take the Cycle Quiz →
-        </animated.button>
+        <Link to="/quiz">
+          <animated.button style={pulse} className="bg-gradient-to-r from-rose-400 to-fuchsia-500 text-white px-8 py-4 rounded-full shadow-lg hover:scale-105 hover:brightness-110 transition-all duration-300 ease-in-out">
+            Take the Cycle Quiz →
+          </animated.button>
+        </Link>
       </div>
     </div>
   );
