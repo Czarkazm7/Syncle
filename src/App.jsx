@@ -9,6 +9,8 @@ import GlassmorphismCard from './GlassmorphismCard';
 import CycleQuiz from './CycleQuiz';
 import Phoenix from './Phoenix';
 import Oracle from './Oracle';
+import TheMuse from './TheMuse';
+import TheArchitect from './TheArchitect';
 
 const App = () => {
   const [darkMode, setDarkMode] = React.useState(false);
@@ -52,6 +54,12 @@ const App = () => {
             <li>
               <Link to="/oracle" className="text-white font-medium hover:underline transition-colors duration-300">Oracle</Link>
             </li>
+            <li>
+              <Link to="/muse" className="text-white font-medium hover:underline transition-colors duration-300">The Muse</Link>
+            </li>
+            <li>
+              <Link to="/architect" className="text-white font-medium hover:underline transition-colors duration-300">The Architect</Link>
+            </li>
           </ul>
           <div className="flex items-center">
             <button onClick={toggleDarkMode} className="text-white dark:text-gray-800">
@@ -68,6 +76,8 @@ const App = () => {
           <Route path="/quiz" element={<CycleQuiz />} />
           <Route path="/phoenix" element={<Phoenix />} />
           <Route path="/oracle" element={<Oracle />} />
+          <Route path="/muse" element={<TheMuse />} />
+          <Route path="/architect" element={<TheArchitect />} />
         </Routes>
       </div>
     </Router>
